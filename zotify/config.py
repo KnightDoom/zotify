@@ -322,9 +322,9 @@ class Config:
 
         # "library" arg overrides all *_library options
         if args is not None and args.library:
-            self.album_library = Path(args.library).expanduser().resolve()
-            self.playlist_library = Path(args.library).expanduser().resolve()
-            self.podcast_library = Path(args.library).expanduser().resolve()
+            self.album_library = Path(args.library).expanduser().resolve().joinpath("Zotify Albums")
+            self.playlist_library = Path(args.library).expanduser().resolve().joinpath("Zotify Playlists")
+            self.podcast_library = Path(args.library).expanduser().resolve().joinpath("Zotify Podcasts")
 
         # "output" arg overrides all output_* options
         if args is not None and args.output:
